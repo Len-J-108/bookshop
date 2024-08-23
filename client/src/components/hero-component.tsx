@@ -1,9 +1,9 @@
 import React, { FC } from "react";
-import heroStyles from "../styles/components/hero.module.scss";
+import heroStyles from "./hero.module.scss";
 import fontStyles from "../styles/utils/fonts.module.scss";
 
 const { image, left } = heroStyles;
-const { logoFont, flexLetter, nerdSymbol, nerdHeavy, italicBrick } = fontStyles;
+const { logoFont, flexLetter, nerdSymbol, cormorant } = fontStyles;
 
 const Hero: FC = () => {
   return (
@@ -14,14 +14,10 @@ const Hero: FC = () => {
         <span
           className={`${logoFont} ${nerdSymbol} ${flexLetter} text-black absolute top-4 left-6 drop-shadow`}
         >
-          󱄟
+          
         </span>
         <div className="relative">
-          <h5 className={`${italicBrick} absolute text-black`}>BUY A BIKE</h5>
-          <h5 className={`${italicBrick} absolute text-red-800 left-1`}>
-            BUY A BIKE
-          </h5>
-          <h5 className={`${italicBrick} absolute`}>BUY A BIKE</h5>
+          <h5 className={`${cormorant} absolute text-black`}>BUY A BOOK</h5>
         </div>
       </aside>
     </div>

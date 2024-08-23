@@ -790,6 +790,17 @@ html {
   grid-auto-columns: max-content auto;
   width: 100%;
 }
+.hero {
+  display: grid;
+  width: 100%;
+  place-items: center;
+  background-size: cover;
+  background-position: center;
+}
+.hero > * {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
 .input {
   flex-shrink: 1;
   appearance: none;
@@ -1019,15 +1030,6 @@ html {
 .top-4 {
   top: 1rem;
 }
-.right-2 {
-  right: 0.5rem;
-}
-.left-2 {
-  left: 0.5rem;
-}
-.left-1 {
-  left: 0.25rem;
-}
 .z-10 {
   z-index: 10;
 }
@@ -1171,10 +1173,6 @@ html {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
-.text-red-800 {
-  --tw-text-opacity: 1;
-  color: rgb(153 27 27 / var(--tw-text-opacity));
-}
 .underline-offset-4 {
   text-underline-offset: 4px;
 }
@@ -1189,6 +1187,10 @@ html {
 .shadow-black {
   --tw-shadow-color: #000;
   --tw-shadow: var(--tw-shadow-colored);
+}
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .drop-shadow {
   --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
@@ -1231,20 +1233,20 @@ html {
   text-decoration-line: underline;
 }
 
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/styles/components/cart-drawer.module.scss ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-.cart-drawer_showDrawer__PxQ9c {
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/cart-drawer.module.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.cart-drawer_showDrawer__0enwE {
   display: block;
-  animation: cart-drawer_drawerShow__neRqp 1.5s forwards;
+  animation: cart-drawer_drawerShow__YTqZc 1.5s forwards;
 }
 
-.cart-drawer_hideDrawer__1yMzp {
+.cart-drawer_hideDrawer__MxVpE {
   display: none;
-  animation: cart-drawer_drawerHide__9LRfk 0.5s forwards;
+  animation: cart-drawer_drawerHide__8_2De 0.5s forwards;
 }
 
-@keyframes cart-drawer_drawerShow__neRqp {
+@keyframes cart-drawer_drawerShow__YTqZc {
   0% {
     opacity: 0;
     transform: translateX(200px);
@@ -1253,7 +1255,7 @@ html {
     opacity: 1;
   }
 }
-@keyframes cart-drawer_drawerHide__9LRfk {
+@keyframes cart-drawer_drawerHide__8_2De {
   0% {
     opacity: 1;
   }
@@ -1274,8 +1276,8 @@ html {
   src: url(/_next/static/media/SymbolsNerdFont-Regular.bd6d6cc9.ttf);
 }
 @font-face {
-  font-family: "italic-bricks";
-  src: url(/_next/static/media/ItalicBricksRegular-GDKa.7db83ea9.ttf);
+  font-family: "cormorant-garamond";
+  src: url(/_next/static/media/CormorantGaramond-Italic.de94eb2a.ttf);
 }
 .fonts_logoFont__Uw8c4 {
   font-size: 40px;
@@ -1292,13 +1294,13 @@ html {
   font-family: "nerd-symbols";
 }
 
-.fonts_italicBrick__dxbAk {
-  font-family: "italic-bricks";
+.fonts_cormorant__5mc8K {
+  font-family: "cormorant-garamond";
   font-size: 2rem;
 }
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/styles/components/logo.module.scss ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/logo.module.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 @font-face {
   font-family: "logo";
   src: url(/_next/static/media/HeavyDataNerdFontPropo-Regular.868d2df6.ttf);
@@ -1307,28 +1309,28 @@ html {
   font-family: "nerd-symbols";
   src: url(/_next/static/media/SymbolsNerdFont-Regular.bd6d6cc9.ttf);
 }
-.logo_logoFont__pWxYF {
+.logo_logoFont__bWxQ2 {
   font-size: 40px;
   font-weight: 200;
   text-shadow: 8px 8px 15px;
   height: 50px;
 }
 
-.logo_nerdHeavy__AXMvR {
+.logo_nerdHeavy__pZtut {
   font-family: "logo";
 }
 
-.logo_nerdSymbol__3q76r {
+.logo_nerdSymbol__6AcOZ {
   font-family: "nerd-symbols";
 }
-/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/styles/components/navigation.module.scss ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-#navigation_navWrapper__84BcI {
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[13].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[13].oneOf[9].use[5]!./src/components/navigation.module.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+#navigation_navWrapper__BLWvp {
   --cl-red: red;
   --dropdown-width: 80px;
 }
-#navigation_navWrapper__84BcI .navigation_navLoginContainer__LRqjY .navigation_loginDropdown__M3BTa {
+#navigation_navWrapper__BLWvp .navigation_navLoginContainer__3w__P .navigation_loginDropdown__kcZwc {
   display: none;
   flex-flow: column;
   gap: 0.3em;
@@ -1339,10 +1341,10 @@ html {
   transform: translateY(0);
   backdrop-filter: blur(10px);
 }
-#navigation_navWrapper__84BcI .navigation_navLoginContainer__LRqjY:hover .navigation_loginDropdown__M3BTa {
+#navigation_navWrapper__BLWvp .navigation_navLoginContainer__3w__P:hover .navigation_loginDropdown__kcZwc {
   display: flex;
 }
-#navigation_navWrapper__84BcI .navigation_navLoginContainer__LRqjY .navigation_icon__TzH9p {
+#navigation_navWrapper__BLWvp .navigation_navLoginContainer__3w__P .navigation_icon__kzC4_ {
   height: 50px;
   height: 100%;
   min-width: var(--dropdown-width);

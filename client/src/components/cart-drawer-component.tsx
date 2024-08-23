@@ -1,7 +1,7 @@
 "use client";
 import React, { FC } from "react";
 import { useCartContext } from "@/context/cart-context/use-cart-context";
-import drawerStyles from "../styles/components/cart-drawer.module.scss";
+import drawerStyles from "./cart-drawer.module.scss";
 import fontStyles from "../styles/utils/fonts.module.scss";
 
 const CartDrawerComponent: FC = () => {

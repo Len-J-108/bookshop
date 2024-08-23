@@ -1,8 +1,8 @@
 "use client";
 import React, { FC } from "react";
 import Link from "next/link";
-import cl from "../styles/components/logo.module.scss";
-import navStyles from "../styles/components/navigation.module.scss";
+import logoStyles from "./logo.module.scss";
+import navStyles from "./navigation.module.scss";
 import { useCartContext } from "@/context/cart-context/use-cart-context";
 
 const NavigationComponent: FC = () => {
@@ -16,7 +16,7 @@ const NavigationComponent: FC = () => {
       <ul className="flex flex-row">
         <li className={navStyles.navLoginContainer}>
           <div
-            className={`${cl.nerdSymbol} ${navStyles.icon} text-white flex items-center`}
+            className={`${logoStyles.nerdSymbol} ${navStyles.icon} text-white flex items-center`}
           >
             
           </div>
@@ -31,7 +31,7 @@ const NavigationComponent: FC = () => {
         </li>
         <li className={navStyles.navLoginContainer}>
           <div
-            className={`${cl.nerdSymbol} ${navStyles.icon} text-white flex items-center cursor-pointer`}
+            className={`${logoStyles.nerdSymbol} ${navStyles.icon} text-white flex items-center cursor-pointer`}
             onClick={() => setDrawer((drawer) => !drawer)}
           >
             󰁶
