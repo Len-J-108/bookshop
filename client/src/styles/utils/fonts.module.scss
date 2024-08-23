@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "logo";
+  src: url("../../../public/Fonts/HeavyDataNerdFontPropo-Regular.ttf");
+}
+
+@font-face {
+  font-family: "nerd-symbols";
+  src: url("../../../public/Fonts/SymbolsNerdFont-Regular.ttf");
+}
+
+@font-face {
+  font-family: "italic-bricks";
+  src: url("../../../public/Fonts/ItalicBricksRegular-GDKa.ttf");
+}
+
+.logoFont {
+  font-size: 40px;
+  font-weight: 200;
+  text-shadow: 8px 8px 15px;
+  // padding: 20px;
+  height: 50px;
+}
+
+.nerdHeavy {
+  font-family: "logo";
+}
+.nerdSymbol {
+  font-family: "nerd-symbols";
+}
+.italicBrick {
+  font-family: "italic-bricks";
+  font-size: 2rem;
+}

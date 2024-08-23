@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cl-bg-page: #334155;
+  --cl-txt-0: #e2e8f0;
+  background-color: var(--cl-bg-page);
+  color: var(--cl-txt-0);
+  box-sizing: border-box;
+
+  @font-face {
+    font-family: "heavy";
+    src: url("../../public/Fonts/HeavyDataNerdFont-Regular.ttf");
+  }
+
+  .heavy {
+    font-family: "heavy";
+  }
+}

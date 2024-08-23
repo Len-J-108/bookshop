@@ -1,0 +1,29 @@
+.showDrawer {
+  display: block;
+  animation: drawerShow 1.5s forwards;
+}
+
+.hideDrawer {
+  display: none;
+  animation: drawerHide 0.5s forwards;
+}
+
+@keyframes drawerShow {
+  0% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes drawerHide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+}
