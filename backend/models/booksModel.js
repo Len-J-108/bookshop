@@ -24,7 +24,7 @@ const booksModel = mongoose.Schema({
     required: true,
   },
   inStock: {
-    typy: Boolean,
+    type: Boolean,
     required: true,
     default: true,
   },
