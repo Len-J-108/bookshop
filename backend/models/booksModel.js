@@ -7,7 +7,7 @@ const discountSchema = new Schema({
     default: false,
   },
   amount: {
-    type: number,
+    type: Number,
     min: 0,
     max: 50,
     default: 0,
@@ -29,7 +29,7 @@ const booksModel = mongoose.Schema({
     default: true,
   },
   stockAmount: {
-    type: number,
+    type: Number,
     required: true,
     default: 1000,
     min: 0,
@@ -71,7 +71,7 @@ const booksModel = mongoose.Schema({
     required: true,
   },
   deliveryTime: {
-    type: number,
+    type: Number,
     default: 5,
     min: 3,
     max: 100,
@@ -90,8 +90,9 @@ const booksModel = mongoose.Schema({
     required: true,
   },
   discount: discountSchema,
+  images: [String],
 });
 
-const Book = mongoose.model("Bike", booksModel);
+const Book = mongoose.model("Book", booksModel);
 
 export default Book;
