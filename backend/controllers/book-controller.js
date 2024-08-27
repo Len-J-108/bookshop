@@ -2,6 +2,7 @@ import Book from "../models/booksModel.js";
 
 export const getAllBooks = async (req, res) => {
   try {
+    console.log("inside try");
     const response = await Book.find().select("title");
     const mod = response.map((x) => x.title);
     res.status(200).json(mod);

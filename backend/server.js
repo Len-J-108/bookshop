@@ -18,12 +18,6 @@ app.get("/", (req, res) => {
 
 app.use("/books", booksRouter);
 
-//   cors({
-//     origin: "http://localhost:80", // 5173 is where we have set our frontend to run
-//     credentials: true,
-//   }),
-// );
-
 app.listen(PORT, () => {
   console.log("Server is listening on port:", PORT);
 });
