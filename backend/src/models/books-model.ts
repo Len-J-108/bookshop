@@ -1,4 +1,4 @@
-import mongoose, { Schema, Model } from "mongoose";
+import { Schema, Model, model } from "mongoose";
 
 interface IDiscount {
   isDiscounted: boolean;
@@ -10,7 +10,7 @@ interface IBooks {
   publisher: string;
   inStock: boolean;
   stockAmount: number;
-  tags: [string];
+  genre: [string];
   brand: string;
   artNum: number;
   isbn: string;
@@ -64,25 +64,7 @@ const booksSchema = new Schema<IBooks, BookModel>({
     min: 0,
     max: 1000,
   },
-  tags: {
-    type: [String],
-    enum: {
-      values: [
-        "thriller",
-        "romance",
-        "fantasy",
-        "novel",
-        "peotry",
-        "sci-fi",
-        "history",
-        "non-fiction",
-        "finction",
-        "politics",
-        "philosophy",
-        "hobbies",
-      ],
-    },
-  },
+  genre: [{ type: Schema.Types.ObjectId, ref: "Genre" }],
   brand: {
     type: String,
     required: true,
@@ -128,6 +110,6 @@ const booksSchema = new Schema<IBooks, BookModel>({
   },
 });
 
-const Book: BookModel = mongoose.model<IBooks, BookModel>("Book", booksSchema);
+const Book: BookModel = model<IBooks, BookModel>("Book", booksSchema);
 
 export default Book;
