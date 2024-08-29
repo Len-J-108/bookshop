@@ -1,6 +1,35 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, Model } from "mongoose";
 
-const discountSchema = new Schema({
+interface IDiscount {
+  isDiscounted: boolean;
+  amount: number;
+}
+
+interface IBooks {
+  title: string;
+  publisher: string;
+  inStock: boolean;
+  stockAmount: number;
+  tags: [string];
+  brand: string;
+  artNum: number;
+  isbn: string;
+  deliveryTime: number;
+  pageNum: number;
+  price: number;
+  discount: IDiscount;
+  images: [string];
+  rating: number;
+}
+
+type BookModel = Model<IBooks>;
+
+const rndm = (num: number): number => {
+  const res: number = Math.floor(Math.random() * (num - 0 + 1) + 0);
+  return res;
+};
+
+const discountSchema = new Schema<IDiscount>({
   isDiscounted: {
     type: Boolean,
     required: true,
@@ -14,7 +43,7 @@ const discountSchema = new Schema({
   },
 });
 
-const booksModel = mongoose.Schema({
+const booksSchema = new Schema<IBooks, BookModel>({
   title: {
     type: String,
     required: true,
@@ -85,14 +114,20 @@ const booksModel = mongoose.Schema({
   },
   price: {
     type: Number,
-    min: 100,
+    min: 5,
     max: 10000,
     required: true,
   },
   discount: discountSchema,
   images: [String],
+  rating: {
+    type: Number,
+    min: 0,
+    max: 5,
+    default: rndm(5),
+  },
 });
 
-const Book = mongoose.model("Book", booksModel);
+const Book: BookModel = mongoose.model<IBooks, BookModel>("Book", booksSchema);
 
 export default Book;
