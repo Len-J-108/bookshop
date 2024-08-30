@@ -21,10 +21,10 @@ app.get("/", (req: Request, res: Response): void => {
 // --- Routes -------------
 app.use("/books", booksRouter);
 app.use("/genre", genreRouter);
-// --- --------- -------------
+// --- Routes -------------
 
 app.listen(PORT, () => {
-  console.log(`Server listening on port: ${PORT}
------------------------------------------------
-..............................................`);
+  console.log(`
+----------------------------------------
+Server listening on port: ${PORT}`);
 });
