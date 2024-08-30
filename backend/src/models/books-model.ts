@@ -11,7 +11,6 @@ interface IBooks {
   inStock: boolean;
   stockAmount: number;
   genre: [string];
-  brand: string;
   artNum: number;
   isbn: string;
   deliveryTime: number;
@@ -20,6 +19,7 @@ interface IBooks {
   discount: IDiscount;
   images: [string];
   rating: number;
+  summary: string;
 }
 
 type BookModel = Model<IBooks>;
@@ -47,6 +47,7 @@ const booksSchema = new Schema<IBooks, BookModel>({
   title: {
     type: String,
     required: true,
+    unique: true,
   },
   publisher: {
     type: String,
@@ -65,12 +66,6 @@ const booksSchema = new Schema<IBooks, BookModel>({
     max: 1000,
   },
   genre: [{ type: Schema.Types.ObjectId, ref: "Genre" }],
-  brand: {
-    type: String,
-    required: true,
-    trim: true,
-    minLength: [3, "book's name should be at least 3 characters long!"],
-  },
   artNum: {
     type: Number,
     required: true,
@@ -107,6 +102,12 @@ const booksSchema = new Schema<IBooks, BookModel>({
     min: 0,
     max: 5,
     default: rndm(5),
+  },
+  summary: {
+    type: String,
+    minlength: 200,
+    maxLength: 10000,
+    required: true,
   },
 });
 
