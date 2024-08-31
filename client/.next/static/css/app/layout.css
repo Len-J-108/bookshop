@@ -1150,6 +1150,18 @@ html {
   padding-top: 2.25rem;
   padding-bottom: 2.25rem;
 }
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 .pe-8 {
   padding-inline-end: 2rem;
 }
@@ -1159,10 +1171,6 @@ html {
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-}
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
 }
 .text-black {
   --tw-text-opacity: 1;

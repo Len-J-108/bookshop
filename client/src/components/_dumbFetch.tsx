@@ -9,11 +9,10 @@ const Dumb: FC = () => {
       .get("http://localhost:4444/genre/all")
       .then((response) => {
         const { data } = response;
-        console.log({ data });
         setData(data.allGenres);
       })
       .catch(() => {
-        console.log("catch");
+        console.log("could not fetch");
       });
   }, []);
   if (data)
@@ -24,7 +23,7 @@ const Dumb: FC = () => {
         })}
       </div>
     );
-  else return <div>NOnono</div>;
+  else return <div>coult not fetch</div>;
 };
 
 export default Dumb;

@@ -1,24 +1,24 @@
-import React, { FC } from "react";
-// import { IGenres } from "@/utils/interfaces";
-import useFetch from "@/utils/useFetch";
+"use client";
+import React, { FC, useEffect } from "react";
+import { fetcher } from "@/utils/fetcher";
 
-interface IGenres {
-  genres: string[];
-}
+const url: string = "http://localhost:4444/genre/all";
 
-const url = "http://localhost:4444/genre/all";
+const Genres = () => {
+  const { loading, error, data, fetchData } = fetcher();
 
-const Genres: FC = () => {
-  const { loading, error, data } = useFetch<IGenres>(url);
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   if (data) {
     return (
       <div>
-        {data.genres.map((x: string, i): any => {
+        {data.allGenres.map((x: string, i: number) => {
           return (
-            <p key={i} className="text-red text-3xl">
+            <span key={i} className="px-2">
               {x}
-            </p>
+            </span>
           );
         })}
       </div>
