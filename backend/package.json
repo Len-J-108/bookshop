@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "type": "module",
-  "main": "server.js",
+  "main": "dist/server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
+    "build": "rm -rf dist/ && npx tsc",
+    "start": "node dist/server.js",
+    "rm": "rm -rf dist/",
+    "dev": "tsx watch src/server.ts"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +21,12 @@
     "mongoose": "^8.5.3"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.0",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4"
   }
 }
