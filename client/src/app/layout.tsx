@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Suspense } from "react";
+import LoadingAll from "./loading";
+
 import HeaderComponent from "@/components/header-component";
 import CartDrawerComponent from "@/components/cart-drawer-component";
 import CartProvider from "@/context/cart-context/cart-context-provider";
-import Dumb from "@/components/_dumbFetch";
 import Genres from "@/components/genres-component";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -26,8 +28,9 @@ export default function RootLayout({
           <div id="wrapperAll" className="h-full">
             <HeaderComponent />
             <CartDrawerComponent />
-            {/* <Dumb /> */}
-            <Genres />
+            <Suspense fallback={<LoadingAll />}>
+              <Genres />
+            </Suspense>
             {children}
           </div>
         </CartProvider>

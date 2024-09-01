@@ -1,3 +1,3 @@
 export interface IGenres {
-  genre: string[];
+  allGenres: string[];
 }
