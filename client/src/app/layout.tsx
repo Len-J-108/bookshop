@@ -28,9 +28,6 @@ export default function RootLayout({
           <div id="wrapperAll" className="h-full">
             <HeaderComponent />
             <CartDrawerComponent />
-            <Suspense fallback={<LoadingAll />}>
-              <Genres />
-            </Suspense>
             {children}
           </div>
         </CartProvider>

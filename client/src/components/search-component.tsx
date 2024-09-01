@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import styles from "./logo.module.scss";
 
-const SearchInputComponent: FC = () => {
+const SearchInputComponent: FC = (): ReactElement => {
   return (
     <div className="h-full flex justify-center items-center">
       <input

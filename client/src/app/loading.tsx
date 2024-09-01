@@ -1,5 +1,5 @@
 const LoadingAll = () => {
-  return <div className="text-5xl text-red-700">...Loading...</div>;
+  return <span className="loading loading-dots loading-lg"></span>;
 };
 
 export default LoadingAll;

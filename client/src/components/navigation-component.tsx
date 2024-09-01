@@ -1,11 +1,11 @@
 "use client";
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import Link from "next/link";
 import logoStyles from "./logo.module.scss";
 import navStyles from "./navigation.module.scss";
 import { useCartContext } from "@/context/cart-context/use-cart-context";
 
-const NavigationComponent: FC = () => {
+const NavigationComponent: FC = (): ReactElement => {
   const { setDrawer } = useCartContext();
 
   return (

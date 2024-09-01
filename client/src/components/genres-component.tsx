@@ -1,5 +1,6 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import getStuff from "@/utils/fetchFromBE";
+import GenreSingle from "./genre-single-component";
 
 const url: string = "/genre/all";
 
@@ -7,20 +8,16 @@ interface EE {
   allGenres: string[];
 }
 
-const Genres: FC = async () => {
+const Genres: FC = async (): Promise<ReactElement> => {
   await new Promise((resolve) => setTimeout(resolve, 2000));
   const data = await getStuff<EE>(url);
 
   return (
-    <div>
-      {data.allGenres.map((x: string, i: number) => {
-        return (
-          <span key={i} className="px-2">
-            {x}
-          </span>
-        );
+    <ul className="absolute top-1 flex gap-1">
+      {data.allGenres.map((genre: string, i: number) => {
+        return <GenreSingle genre={genre} />;
       })}
-    </div>
+    </ul>
   );
 };
 

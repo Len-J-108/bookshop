@@ -1,10 +1,10 @@
 "use client";
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import { useCartContext } from "@/context/cart-context/use-cart-context";
 import drawerStyles from "./cart-drawer.module.scss";
 import fontStyles from "../styles/utils/fonts.module.scss";
 
-const CartDrawerComponent: FC = () => {
+const CartDrawerComponent: FC = (): ReactElement => {
   const { drawer, setDrawer } = useCartContext();
   const { showDrawer, hideDrawer } = drawerStyles;
   const { nerdSymbol } = fontStyles;

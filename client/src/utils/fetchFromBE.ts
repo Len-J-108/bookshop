@@ -14,7 +14,7 @@ interface APIResponse<T> {
   status: number;
 }
 
-const getStuff = async <T,>(address: string): Promise<T | undefined> => {
+const getStuff = async <T>(address: string): Promise<T | undefined> => {
   const response: AxiosResponse<T> = await API.get<T>(address);
   const { data } = response;
   if (response.status === 200) {
@@ -23,12 +23,3 @@ const getStuff = async <T,>(address: string): Promise<T | undefined> => {
 };
 
 export default getStuff;
-// ----------------------------
-//
-// const getStuff = async <T>(address: string): Promise<T | undefined> => {
-//   const response: AxiosResponse<T> = await API.get<T>(address);
-//   const { data } = response;
-//   if (response.status === 200) {
-//     return data;
-//   }
-// };

@@ -1,10 +1,10 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import Link from "next/link";
 import Logo from "./logo-component";
 import Navigation from "./navigation-component";
 import SearchInputComponent from "./search-component";
 
-const HeaderComponent: FC = () => {
+const HeaderComponent: FC = (): ReactElement => {
   return (
     <div
       id="header-wrapper"
