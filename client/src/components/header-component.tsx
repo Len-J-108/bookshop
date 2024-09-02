@@ -6,15 +6,17 @@ import SearchInputComponent from "./search-component";
 
 const HeaderComponent: FC = (): ReactElement => {
   return (
-    <div
-      id="header-wrapper"
-      className="flex direction-row h-12 justify-between"
-    >
-      <Link href="/">
-        <Logo />
-      </Link>
-      <SearchInputComponent />
-      <Navigation />
+    <div className="flex flex-row justify-center">
+      <div
+        id="header-wrapper"
+        className="flex direction-row h-12 justify-between w-4/5"
+      >
+        <Link href="/">
+          <Logo />
+        </Link>
+        <SearchInputComponent />
+        <Navigation />
+      </div>
     </div>
   );
 };

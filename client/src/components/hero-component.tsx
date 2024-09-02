@@ -1,23 +1,35 @@
 import React, { FC, ReactElement } from "react";
-import heroStyles from "./hero.module.scss";
+import Image from "next/image";
 import fontStyles from "../styles/utils/fonts.module.scss";
+import img1 from "../../public/Images/Hero/hero-cropped.jpg";
+import styles from "./hero-component.module.scss";
 
-const { image, left } = heroStyles;
-const { logoFont, flexLetter, nerdSymbol, cormorant } = fontStyles;
+const { heroWrapper, heroLeft, heroRight, heroLeftContent, heroLeftGradient } =
+  styles;
+const { cormorant, headingSizeBig } = fontStyles;
 
 const Hero: FC = (): ReactElement => {
   return (
-    <div className={`${image} w-3/5 h-72 flex absolute  my-4`}>
-      <aside
-        className={`${left} self-start w-2/5 h-full bg-rose-200 opacity-80 flex flex-col justify-center text-orange-900 relative`}
-      >
-        <span
-          className={`${logoFont} ${nerdSymbol} ${flexLetter} text-black absolute top-4 left-6 drop-shadow`}
+    <div className={`${heroWrapper} mt-8`}>
+      <aside id="hero-left" className={`${heroLeft}`}>
+        <div
+          className={`${heroLeftContent} ${heroLeftGradient} shadow-xl rounded-lg`}
         >
-          
-        </span>
-        <div className="relative">
-          <h5 className={`${cormorant} absolute text-black`}>BUY A BOOK</h5>
+          <div
+            id="hero-heading-container"
+            className={`flex flex-col gap-1 my-12 w-4/5 mx-auto text-center font-bold drop-shadow`}
+          >
+            <h2 className={`${cormorant} ${headingSizeBig}`}>We've</h2>
+            <h2 className={`${cormorant} ${headingSizeBig}`}>got</h2>
+            <h2 className={`${cormorant} ${headingSizeBig}`}>books</h2>
+            <h2 className={`${cormorant} ${headingSizeBig}`}>for days...</h2>
+          </div>
+          <button className="btn btn-primary">Discount</button>
+        </div>
+      </aside>
+      <aside id="hero-right" className={`${heroRight}`}>
+        <div>
+          <Image src={img1} alt="Hero Image" className="rounded-lg shadow-lg" />
         </div>
       </aside>
     </div>

@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Suspense } from "react";
-import LoadingAll from "./loading";
 
 import HeaderComponent from "@/components/header-component";
 import CartDrawerComponent from "@/components/cart-drawer-component";

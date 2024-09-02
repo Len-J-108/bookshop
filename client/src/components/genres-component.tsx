@@ -9,31 +9,16 @@ interface EE {
 }
 
 const Genres: FC = async (): Promise<ReactElement> => {
-  await new Promise((resolve) => setTimeout(resolve, 2000));
+  // await new Promise((resolve) => setTimeout(resolve, 2000));
   const data = await getStuff<EE>(url);
 
   return (
-    <ul className="absolute top-1 menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
+    <ul className="w-full absolute top-0 menu-sm menu-vertical lg:menu-horizontal bg-base-100 flex justify-center">
       {data.allGenres.map((genre: string, i: number) => {
-        // return <GenreSingle genre={genre} />;
-        return (
-          <li>
-            <a className="text-neutral-200">{genre}</a>
-          </li>
-        );
+        return <GenreSingle genre={genre} />;
       })}
     </ul>
   );
 };
-{
-  {
-    /* <li><a>Item 1</a></li> */
-  }
-}
-{
-  /* <li><a>Item 2</a></li> */
-}
-{
-  /* <li><a>Item 3</a></li> */
-}
+
 export default Genres;
