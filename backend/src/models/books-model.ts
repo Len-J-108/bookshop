@@ -7,11 +7,12 @@ interface IDiscount {
 
 interface IBooks {
   title: string;
+  author: string;
+  year: string;
   publisher: string;
   inStock: boolean;
   stockAmount: number;
   genre: [string];
-  artNum: number;
   isbn: string;
   deliveryTime: number;
   pageNum: number;
@@ -49,6 +50,14 @@ const booksSchema = new Schema<IBooks, BookModel>({
     required: true,
     unique: true,
   },
+  author: {
+    type: String,
+    required: true,
+  },
+  year: {
+    type: String,
+    required: true,
+  },
   publisher: {
     type: String,
     required: true,
@@ -66,12 +75,6 @@ const booksSchema = new Schema<IBooks, BookModel>({
     max: 1000,
   },
   genre: [{ type: Schema.Types.ObjectId, ref: "Genre" }],
-  artNum: {
-    type: Number,
-    required: true,
-    min: 1,
-    max: 100000,
-  },
   isbn: {
     type: String,
     required: true,
@@ -105,8 +108,8 @@ const booksSchema = new Schema<IBooks, BookModel>({
   },
   summary: {
     type: String,
-    minlength: 200,
-    maxLength: 10000,
+    minlength: 2,
+    maxLength: 100000,
     required: true,
   },
 });
