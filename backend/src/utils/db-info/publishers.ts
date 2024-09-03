@@ -1,4 +1,4 @@
-const publishers = [
+const publishers: string[] = [
   "Aurum Publishing House",
   "Briarwood Books",
   "Cairnstone Press",
@@ -50,3 +50,5 @@ const publishers = [
   "Windsor Publishing House",
   "Xylon Press",
 ];
+
+export default publishers;

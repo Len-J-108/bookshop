@@ -3,7 +3,7 @@ interface IBook {
   author: string;
   year: string;
 }
-export const thrillers: IBook[] = [
+const thrillers: IBook[] = [
   { title: "Psycho", author: "Robert Bloch", year: "1959" },
   { title: "The Silence of the Lambs", author: "Thomas Harris", year: "1988" },
   {
@@ -137,3 +137,5 @@ export const thrillers: IBook[] = [
   { title: "The Poison Tree", author: "Erin Kelly", year: "2010" },
   { title: "The Blind", author: "A.F. Brady", year: "2017" },
 ];
+
+export default thrillers;

@@ -1,7 +1,8 @@
 import { faker } from "@faker-js/faker";
-import Book from "../models/books-model";
-import thrillers from "../utils/db-info/thriller";
-import publishers from "../utils/db-info/publishers";
+import "./mongoConnect.js";
+import Book from "../models/books-model.js";
+import thrillers from "../utils/db-info/thriller.js";
+import publishers from "../utils/db-info/publishers.js";
 
 const deleteBooks = async () => {
   return await Book.deleteMany();
@@ -13,6 +14,7 @@ const generateBooks = () => {
   const rndm = (min, max) => Math.floor(Math.random() * (max - min + 1) + min);
 
   for (let i = 0; i < thrillers.length; i++) {
+    // console.log("generate: ", thrillers[i]);
     const title = thrillers[i].title;
     const author = thrillers[i].author;
     const year = thrillers[i].year;
@@ -63,7 +65,7 @@ const generateBooks = () => {
 
 try {
   const books = generateBooks();
-  await Book.insertMany(cars);
+  // await Book.insertMany(books);
   console.log("Database has been updated!");
 } catch (e) {
   console.log(e);

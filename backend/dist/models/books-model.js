@@ -7,13 +7,11 @@ const discountSchema = new Schema({
     isDiscounted: {
         type: Boolean,
         required: true,
-        default: false,
     },
     amount: {
         type: Number,
         min: 0,
         max: 50,
-        default: 0,
     },
 });
 const booksSchema = new Schema({
@@ -22,66 +20,66 @@ const booksSchema = new Schema({
         required: true,
         unique: true,
     },
-    publisher: {
+    author: {
         type: String,
         required: true,
     },
-    inStock: {
-        type: Boolean,
-        required: true,
-        default: true,
-    },
-    stockAmount: {
-        type: Number,
-        required: true,
-        default: 1000,
-        min: 0,
-        max: 1000,
-    },
-    genre: [{ type: Schema.Types.ObjectId, ref: "Genre" }],
-    artNum: {
-        type: Number,
-        required: true,
-        min: 1,
-        max: 100000,
-    },
-    isbn: {
+    year: {
         type: String,
         required: true,
     },
-    deliveryTime: {
-        type: Number,
-        default: 5,
-        min: 3,
-        max: 100,
-        required: false,
-    },
-    pageNum: {
-        type: Number,
-        min: 20,
-        max: 10000,
-        required: true,
-    },
-    price: {
-        type: Number,
-        min: 5,
-        max: 10000,
-        required: true,
-    },
-    discount: discountSchema,
-    images: [String],
-    rating: {
-        type: Number,
-        min: 0,
-        max: 5,
-        default: rndm(5),
-    },
-    summary: {
-        type: String,
-        minlength: 200,
-        maxLength: 10000,
-        required: true,
-    },
+    // publisher: {
+    //   type: String,
+    //   required: true,
+    // },
+    // inStock: {
+    //   type: Boolean,
+    //   required: true,
+    // },
+    // stockAmount: {
+    //   type: Number,
+    //   required: true,
+    //   min: 0,
+    //   max: 10000,
+    // },
+    // genre: [{ type: Schema.Types.ObjectId, ref: "Genre" }],
+    // genre: [{ type: String }],
+    // isbn: {
+    //   type: String,
+    //   required: true,
+    // },
+    // deliveryTime: {
+    //   type: Number,
+    //   min: 3,
+    //   max: 100,
+    //   required: false,
+    // },
+    // pageNum: {
+    //   type: Number,
+    //   min: 20,
+    //   max: 10000,
+    //   required: true,
+    // },
+    // price: {
+    //   type: Number,
+    //   min: 5,
+    //   max: 10000,
+    //   required: true,
+    // },
+    // discount: discountSchema,
+    // images: [String],
+    // rating: {
+    //   type: Number,
+    //   min: 0,
+    //   max: 5,
+    //   default: rndm(5),
+    // },
+    // summary: {
+    //   type: String,
+    //   minlength: 2,
+    //   maxLength: 100000,
+    //   required: true,
+    // },
 });
 const Book = model("Book", booksSchema);
 export default Book;
