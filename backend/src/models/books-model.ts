@@ -9,10 +9,10 @@ interface IBooks {
   title: string;
   author: string;
   year: string;
-  // publisher: string;
-  // inStock: boolean;
-  // stockAmount: number;
-  // genre: [string];
+  publisher: string;
+  instock: boolean;
+  stockamount: number;
+  genre: [string];
   // isbn: string;
   // deliveryTime: number;
   // pageNum: number;
@@ -30,18 +30,18 @@ const rndm = (num: number): number => {
   return res;
 };
 
-const discountSchema = new Schema<IDiscount>({
-  isDiscounted: {
-    type: Boolean,
-    required: true,
-  },
-  amount: {
-    type: Number,
-    min: 0,
-    max: 50,
-  },
-});
-
+// const discountSchema = new Schema<IDiscount>({
+//   isDiscounted: {
+//     type: Boolean,
+//     required: true,
+//   },
+//   amount: {
+//     type: Number,
+//     min: 0,
+//     max: 50,
+//   },
+// });
+//
 const booksSchema = new Schema<IBooks, BookModel>({
   title: {
     type: String,
@@ -56,22 +56,22 @@ const booksSchema = new Schema<IBooks, BookModel>({
     type: String,
     required: true,
   },
-  // publisher: {
-  //   type: String,
-  //   required: true,
-  // },
-  // inStock: {
-  //   type: Boolean,
-  //   required: true,
-  // },
-  // stockAmount: {
-  //   type: Number,
-  //   required: true,
-  //   min: 0,
-  //   max: 10000,
-  // },
+  publisher: {
+    type: String,
+    required: true,
+  },
+  instock: {
+    type: Boolean,
+    required: true,
+  },
+  stockamount: {
+    type: Number,
+    required: true,
+    min: 0,
+    max: 10000,
+  },
   // genre: [{ type: Schema.Types.ObjectId, ref: "Genre" }],
-  // genre: [{ type: String }],
+  genre: [{ type: String }],
   // isbn: {
   //   type: String,
   //   required: true,

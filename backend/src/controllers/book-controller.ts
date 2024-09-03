@@ -6,7 +6,7 @@ export const getAllBooks = async (
   res: Response,
 ): Promise<void> => {
   try {
-    const response = await Book.find().select("title");
+    const response = await Book.find();
     const mod = response.map((x: any) => x.title);
     res.status(200).json(mod);
   } catch (err: any) {

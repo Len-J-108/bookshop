@@ -16,12 +16,12 @@ const generateBooks = () => {
     const title = thrillers[i].title;
     const author = thrillers[i].author;
     const year = thrillers[i].year;
-    // const publisher = publishers[rndm(0, 49)];
-    // const inStock = faker.datatype.boolean(0.7);
-    // const stockAmount = inStock
-    //   ? faker.number.int({ min: 1, max: 10000 })
-    //   : faker.number.int(0);
-    // const genre = "Thriller";
+    const publisher = publishers[rndm(0, 49)];
+    const inStock = faker.datatype.boolean(0.7);
+    const stockAmount = inStock
+      ? faker.number.int({ min: 1, max: 10000 })
+      : faker.number.int(0);
+    const genre = "Thriller";
     // const isbn = faker.commerce.isbn();
     // const deliveryTime = faker.number.int({ min: 3, max: 100 });
     // const pageNum = faker.number.int({ min: 20, max: 2500 });
