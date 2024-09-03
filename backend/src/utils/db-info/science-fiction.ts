@@ -1,0 +1,223 @@
+interface IBook {
+  title: string;
+  author: string;
+  year: string;
+}
+
+export interface IGenre {
+  genreName: string;
+  data: IBook[];
+}
+
+const scienceFiction: IGenre = {
+  genreName: "Science-Fiction",
+  data: [
+    { title: "Frankenstein", author: "Mary Shelley", year: "1818" },
+    {
+      title: "2001: A Space Odyssey",
+      author: "Arthur C. Clarke",
+      year: "1968",
+    },
+    { title: "Dune", author: "Frank Herbert", year: "1965" },
+    { title: "The Time Machine", author: "H.G. Wells", year: "1895" },
+    {
+      title: "The Hitchhiker's Guide to the Galaxy",
+      author: "Douglas Adams",
+      year: "1979",
+    },
+    { title: "Neuromancer", author: "William Gibson", year: "1984" },
+    {
+      title: "Do Androids Dream of Electric Sheep?",
+      author: "Philip K. Dick",
+      year: "1968",
+    },
+    { title: "Foundation", author: "Isaac Asimov", year: "1951" },
+    { title: "I, Robot", author: "Isaac Asimov", year: "1950" },
+    { title: "The Martian", author: "Andy Weir", year: "2011" },
+    // { title: "The Three-Body Problem", author: "Liu Cixin", year: "2008" },
+    { title: "Slaughterhouse-Five", author: "Kurt Vonnegut", year: "1969" },
+    { title: "Fahrenheit 451", author: "Ray Bradbury", year: "1953" },
+    {
+      title: "The Left Hand of Darkness",
+      author: "Ursula K. Le Guin",
+      year: "1969",
+    },
+    { title: "The Dispossessed", author: "Ursula K. Le Guin", year: "1974" },
+    {
+      title: "The Moon is a Harsh Mistress",
+      author: "Robert A. Heinlein",
+      year: "1966",
+    },
+    {
+      title: "Stranger in a Strange Land",
+      author: "Robert A. Heinlein",
+      year: "1961",
+    },
+    { title: "The Forever War", author: "Joe Haldeman", year: "1974" },
+    { title: "Diaspora", author: "Greg Egan", year: "1997" },
+    { title: "Snow Crash", author: "Neal Stephenson", year: "1992" },
+    { title: "The Diamond Age", author: "Neal Stephenson", year: "1995" },
+    { title: "The Power", author: "Naomi Alderman", year: "2016" },
+    { title: "The Road", author: "Cormac McCarthy", year: "2006" },
+    { title: "Alas, Babylon", author: "Pat Frank", year: "1959" },
+    // { title: "The Andromeda Strain", author: "Michael Crichton", year: "1969" },
+    {
+      title: "The Terminal Experiment",
+      author: "Robert J. Sawyer",
+      year: "1995",
+    },
+    { title: "The Quantum Thief", author: "Hannu Rajaniemi", year: "2010" },
+    { title: "Ancillary Justice", author: "Ann Leckie", year: "2013" },
+    // { title: "The City & The City", author: "China Miéville", year: "2009" },
+    { title: "The Windup Girl", author: "Paolo Bacigalupi", year: "2009" },
+    { title: "Saturn's Children", author: "Charles Stross", year: "2008" },
+    // {
+    //   title: "The Mote in God's Eye",
+    //   author: "Larry Niven and Jerry Pournelle",
+    //   year: "1974",
+    // },
+    {
+      title: "The Expanse: Leviathan Wakes",
+      author: "James S. A. Corey",
+      year: "2011",
+    },
+    { title: "Old Man's War", author: "John Scalzi", year: "2005" },
+    {
+      title: "The Long Way to a Small, Angry Planet",
+      author: "Becky Chambers",
+      year: "2014",
+    },
+    // {
+    //   title: "The Three-Body Problem: The Dark Forest",
+    //   author: "Liu Cixin",
+    //   year: "2010",
+    // },
+    { title: "The Collapsing Empire", author: "John Scalzi", year: "2017" },
+    { title: "Provenance", author: "Ann Leckie", year: "2017" },
+    {
+      title: "A Closed and Common Orbit",
+      author: "Becky Chambers",
+      year: "2016",
+    },
+    {
+      title: "The Power of Five: Raven's Gate",
+      author: "Anthony Horowitz",
+      year: "2005",
+    },
+    {
+      title: "The Illuminatus! Trilogy",
+      author: "Robert Shea and Robert Anton Wilson",
+      year: "1975",
+    },
+    { title: "The Crystal World", author: "J.G. Ballard", year: "1966" },
+    { title: "The Machine Stops", author: "E.M. Forster", year: "1909" },
+    { title: "We", author: "Yevgeny Zamyatin", year: "1924" },
+    { title: "Brave New World", author: "Aldous Huxley", year: "1932" },
+    { title: "The Sirens of Titan", author: "Kurt Vonnegut", year: "1959" },
+    { title: "The Caves of Steel", author: "Isaac Asimov", year: "1954" },
+    { title: "The End of Eternity", author: "Isaac Asimov", year: "1955" },
+    {
+      title: "The Stars My Destination",
+      author: "Alfred Bester",
+      year: "1956",
+    },
+    { title: "The Demolished Man", author: "Alfred Bester", year: "1953" },
+    {
+      title: "The Space Merchants",
+      author: "Frederik Pohl and C.M. Kornbluth",
+      year: "1953",
+    },
+    { title: "The Death of Grass", author: "John Christopher", year: "1956" },
+    { title: "The Kraken Wakes", author: "John Wyndham", year: "1953" },
+    { title: "The Day of the Triffids", author: "John Wyndham", year: "1951" },
+    { title: "The Deathworld Trilogy", author: "Harry Harrison", year: "1960" },
+    {
+      title: "The Stainless Steel Rat",
+      author: "Harry Harrison",
+      year: "1961",
+    },
+    {
+      title: "The Status Civilization",
+      author: "Robert Sheckley",
+      year: "1960",
+    },
+    { title: "The Mind Parasites", author: "Colin Wilson", year: "1967" },
+    { title: "The Star Maker", author: "Olaf Stapledon", year: "1937" },
+    { title: "Odd John", author: "Olaf Stapledon", year: "1935" },
+    { title: "Last and First Men", author: "Olaf Stapledon", year: "1930" },
+    { title: "The World Set Free", author: "H.G. Wells", year: "1914" },
+    { title: "The War in the Air", author: "H.G. Wells", year: "1908" },
+    { title: "The Food of the Gods", author: "H.G. Wells", year: "1904" },
+    { title: "The Invisible Man", author: "H.G. Wells", year: "1897" },
+    { title: "The Island of Dr. Moreau", author: "H.G. Wells", year: "1896" },
+    { title: "The First Men in the Moon", author: "H.G. Wells", year: "1901" },
+    {
+      title: "The Shape of Things to Come",
+      author: "H.G. Wells",
+      year: "1933",
+    },
+    { title: "The Machine Gunners", author: "Robert Westall", year: "1975" },
+    { title: "The Tomorrow People", author: "Roger Zelazny", year: "1966" },
+    { title: "This Immortal", author: "Roger Zelazny", year: "1965" },
+    { title: "The Dreaming Jewels", author: "Theodore Sturgeon", year: "1950" },
+    { title: "More Than Human", author: "Theodore Sturgeon", year: "1953" },
+    {
+      title: "The Cosmic Engineers",
+      author: "Clifford D. Simak",
+      year: "1950",
+    },
+    { title: "Ringworld", author: "Larry Niven", year: "1970" },
+    { title: "Protector", author: "Larry Niven", year: "1973" },
+    {
+      title: "The Mote in God's Eye",
+      author: "Larry Niven and Jerry Pournelle",
+      year: "1974",
+    },
+    {
+      title: "The Gripping Hand",
+      author: "Larry Niven and Jerry Pournelle",
+      year: "1993",
+    },
+    {
+      title: "The Boat of a Million Years",
+      author: "Poul Anderson",
+      year: "1989",
+    },
+    { title: "Tau Zero", author: "Poul Anderson", year: "1970" },
+    { title: "The High Crusade", author: "Poul Anderson", year: "1960" },
+    { title: "The Long Tomorrow", author: "Leigh Brackett", year: "1956" },
+    { title: "The Big Jump", author: "Leigh Brackett", year: "1953" },
+    { title: "The Sword of Rhiannon", author: "Leigh Brackett", year: "1949" },
+    { title: "The Dark World", author: "Henry Kuttner", year: "1946" },
+    { title: "The Valley of the Flame", author: "Henry Kuttner", year: "1946" },
+    { title: "The Mask of Cthulhu", author: "August Derleth", year: "1958" },
+    { title: "The Trail of Cthulhu", author: "August Derleth", year: "1944" },
+    {
+      title: "The Case of Charles Dexter Ward",
+      author: "H.P. Lovecraft",
+      year: "1941",
+    },
+    {
+      title: "The Shadow Over Innsmouth",
+      author: "H.P. Lovecraft",
+      year: "1931",
+    },
+    {
+      title: "The Colour Out of Space",
+      author: "H.P. Lovecraft",
+      year: "1927",
+    },
+    { title: "The Call of Cthulhu", author: "H.P. Lovecraft", year: "1928" },
+    { title: "The Dunwich Horror", author: "H.P. Lovecraft", year: "1929" },
+    {
+      title: "The Thing on the Doorstep",
+      author: "H.P. Lovecraft",
+      year: "1937",
+    },
+    { title: "The Shadow Out of Time", author: "H.P. Lovecraft", year: "1936" },
+    { title: "The City of Ember", author: "Jeanne DuPrau", year: "2003" },
+    { title: "Altered Carbon", author: "Richard K. Morgan", year: "2002" },
+  ],
+};
+
+export default scienceFiction;

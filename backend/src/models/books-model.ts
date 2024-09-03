@@ -1,7 +1,7 @@
 import { Schema, Model, model } from "mongoose";
 
 interface IDiscount {
-  isDiscounted: boolean;
+  isdiscounted: boolean;
   amount: number;
 }
 
@@ -14,13 +14,13 @@ interface IBooks {
   stockamount: number;
   genre: [string];
   isbn: string;
-  // deliveryTime: number;
-  // pageNum: number;
-  // price: number;
-  // discount: IDiscount;
-  // images: [string];
-  // rating: number;
-  // summary: string;
+  deliveryTime: number;
+  pagenum: number;
+  price: number;
+  discount: IDiscount;
+  images: [string];
+  rating: number;
+  summary: string;
 }
 
 type BookModel = Model<IBooks>;
@@ -30,18 +30,18 @@ const rndm = (num: number): number => {
   return res;
 };
 
-// const discountSchema = new Schema<IDiscount>({
-//   isDiscounted: {
-//     type: Boolean,
-//     required: true,
-//   },
-//   amount: {
-//     type: Number,
-//     min: 0,
-//     max: 50,
-//   },
-// });
-//
+const discountSchema = new Schema<IDiscount>({
+  isdiscounted: {
+    type: Boolean,
+    required: true,
+  },
+  amount: {
+    type: Number,
+    min: 0,
+    max: 50,
+  },
+});
+
 const booksSchema = new Schema<IBooks, BookModel>({
   title: {
     type: String,
@@ -76,38 +76,38 @@ const booksSchema = new Schema<IBooks, BookModel>({
     type: String,
     required: true,
   },
-  // deliveryTime: {
-  //   type: Number,
-  //   min: 3,
-  //   max: 100,
-  //   required: false,
-  // },
-  // pageNum: {
-  //   type: Number,
-  //   min: 20,
-  //   max: 10000,
-  //   required: true,
-  // },
-  // price: {
-  //   type: Number,
-  //   min: 5,
-  //   max: 10000,
-  //   required: true,
-  // },
-  // discount: discountSchema,
-  // images: [String],
-  // rating: {
-  //   type: Number,
-  //   min: 0,
-  //   max: 5,
-  //   default: rndm(5),
-  // },
-  // summary: {
-  //   type: String,
-  //   minlength: 2,
-  //   maxLength: 100000,
-  //   required: true,
-  // },
+  deliveryTime: {
+    type: Number,
+    min: 3,
+    max: 100,
+    required: false,
+  },
+  pagenum: {
+    type: Number,
+    min: 20,
+    max: 10000,
+    required: true,
+  },
+  price: {
+    type: Number,
+    min: 5,
+    max: 10000,
+    required: true,
+  },
+  discount: discountSchema,
+  images: [String],
+  rating: {
+    type: Number,
+    min: 0,
+    max: 5,
+    default: rndm(5),
+  },
+  summary: {
+    type: String,
+    minlength: 2,
+    maxLength: 100000,
+    required: true,
+  },
 });
 
 const Book: BookModel = model<IBooks, BookModel>("Book", booksSchema);
