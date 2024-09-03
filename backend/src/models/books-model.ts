@@ -13,7 +13,7 @@ interface IBooks {
   instock: boolean;
   stockamount: number;
   genre: [string];
-  // isbn: string;
+  isbn: string;
   // deliveryTime: number;
   // pageNum: number;
   // price: number;
@@ -72,10 +72,10 @@ const booksSchema = new Schema<IBooks, BookModel>({
   },
   // genre: [{ type: Schema.Types.ObjectId, ref: "Genre" }],
   genre: [{ type: String }],
-  // isbn: {
-  //   type: String,
-  //   required: true,
-  // },
+  isbn: {
+    type: String,
+    required: true,
+  },
   // deliveryTime: {
   //   type: Number,
   //   min: 3,

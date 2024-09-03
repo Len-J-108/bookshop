@@ -44,11 +44,11 @@ const booksSchema = new Schema({
         max: 10000,
     },
     // genre: [{ type: Schema.Types.ObjectId, ref: "Genre" }],
-    // genre: [{ type: String }],
-    // isbn: {
-    //   type: String,
-    //   required: true,
-    // },
+    genre: [{ type: String }],
+    isbn: {
+        type: String,
+        required: true,
+    },
     // deliveryTime: {
     //   type: Number,
     //   min: 3,

@@ -22,7 +22,7 @@ const generateBooks = () => {
       ? faker.number.int({ min: 1, max: 10000 })
       : faker.number.int(0);
     const genre = "Thriller";
-    // const isbn = faker.commerce.isbn();
+    const isbn = faker.commerce.isbn();
     // const deliveryTime = faker.number.int({ min: 3, max: 100 });
     // const pageNum = faker.number.int({ min: 20, max: 2500 });
     // const price = faker.number.int({ min: 5, max: 120 });
