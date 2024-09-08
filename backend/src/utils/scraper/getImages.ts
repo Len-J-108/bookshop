@@ -6,6 +6,7 @@ import "../mongoConnect.js";
 import Book from "../../models/books-model.js";
 
 const getImagesFromPresearch = async function (x: string): Promise<void> {
+  console.log(`start getting cover of: ${x}`);
   const string: string = searchQuery(x);
   const url = `https://presearch.com/images?q=${string} book cover`;
 
@@ -27,7 +28,7 @@ const getImagesFromPresearch = async function (x: string): Promise<void> {
     const viewImage: any = await page.goto(images[i]);
 
     fs.writeFile(
-      `${saveFolder}/${saveName}-${i}`,
+      `public/images/bookcover/${saveFolder}/${saveName}-${i}`,
       await viewImage.buffer(),
       () => console.log(`image: ${saveName} saved!`),
     );
@@ -48,10 +49,13 @@ const getBooks = async (genre: string): Promise<string[]> => {
 };
 
 const res = await getBooks("Thriller");
-console.log(res);
 
-res.forEach((book) => {
-  getImagesFromPresearch(book);
-});
+// res.forEach(async (book) => {
+//   await getImagesFromPresearch(book);
+// });
+
+for (let book of res) {
+  await getImagesFromPresearch(book);
+}
 
 process.exit(0);

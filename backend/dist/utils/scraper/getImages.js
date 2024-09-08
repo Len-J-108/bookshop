@@ -5,6 +5,7 @@ import { mkDir } from "../mkDir.js";
 import "../mongoConnect.js";
 import Book from "../../models/books-model.js";
 const getImagesFromPresearch = async function (x) {
+    console.log(`start getting cover of: ${x}`);
     const string = searchQuery(x);
     const url = `https://presearch.com/images?q=${string} book cover`;
     const browser = await puppeteer.launch({ headless: false });
@@ -17,7 +18,7 @@ const getImagesFromPresearch = async function (x) {
     const saveFolder = mkDir(saveName, "/home/len/Documents/projects/elektronika-comerza/backend/public/images/bookcover/");
     for (let i = 0; i < images.length; i++) {
         const viewImage = await page.goto(images[i]);
-        fs.writeFile(`${saveFolder}/${saveName}-${i}`, await viewImage.buffer(), () => console.log(`image: ${saveName} saved!`));
+        fs.writeFile(`public/images/bookcover/${saveFolder}/${saveName}-${i}`, await viewImage.buffer(), () => console.log(`image: ${saveName} saved!`));
     }
     //---------------------------------
     await browser.close();
@@ -33,9 +34,10 @@ const getBooks = async (genre) => {
     }
 };
 const res = await getBooks("Thriller");
-console.log(res);
-res.forEach((book) => {
-    console.log(`jojojo: ${book}`);
-    // getImagesFromPresearch(book);
-});
+// res.forEach(async (book) => {
+//   await getImagesFromPresearch(book);
+// });
+for (let book of res) {
+    await getImagesFromPresearch(book);
+}
 process.exit(0);
