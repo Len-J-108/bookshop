@@ -1,3 +1,4 @@
+"use server";
 import React, { FC, ReactElement } from "react";
 import getStuff from "@/utils/fetchFromBE";
 import GenreSingle from "./genre-single-component";
@@ -9,7 +10,7 @@ interface EE {
 }
 
 const Genres: FC = async (): Promise<ReactElement> => {
-  // await new Promise((resolve) => setTimeout(resolve, 2000));
+  await new Promise((resolve) => setTimeout(resolve, 1000));
   const data = await getStuff<EE>(url);
 
   return (
